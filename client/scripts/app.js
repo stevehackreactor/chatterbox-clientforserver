@@ -17,7 +17,7 @@ var App = {
 
 
     // Poll for new messages every 3 sec
-    setInterval(App.fetch, 3000);
+    setInterval(App.fetch, 8000);
       },
 
   fetch: function(callback = ()=>{}) {
@@ -28,7 +28,8 @@ var App = {
 
       Rooms.update(data.results, RoomsView.render);
       Messages.update(data.results, MessagesView.render);
-      
+
+      // console.log(Messages._data);
       callback();
     });
   },
